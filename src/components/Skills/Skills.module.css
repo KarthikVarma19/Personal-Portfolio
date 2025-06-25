@@ -1,0 +1,146 @@
+.skillsCategory {
+  padding: 2px;
+}
+.statusBadge {
+  display: flex;
+  border: 1px solid lightgray;
+  border-radius: 50%;
+  object-fit: contain;
+  align-items: center;
+  padding: 10px;
+}
+
+.title {
+  font-size: 10px;
+  padding-left: 3px;
+  margin-top: 5px;
+}
+
+.badgeContainer {
+  margin-top: 10px;
+  display: flex;
+}
+
+.linkedlistnode {
+  border: 1px solid lightgray;
+  display: inline;
+  flex-wrap: wrap;
+  border-radius: 10px;
+  align-items: center;
+  padding: 10px;
+}
+
+.arraynode {
+  border: 1px solid lightgray;
+
+  margin: 3px 0px;
+  display: inline;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 10px;
+}
+
+.treenode {
+  border: 1px solid lightgray;
+  display: inline;
+  margin: 3px;
+  flex-wrap: wrap;
+  justify-content: center;
+  border-radius: 100%;
+  align-items: center;
+  padding: 10px;
+}
+
+.leftSlant {
+  width: 2px;
+  height: 20px;
+  background-color: #d3d3d3;
+  transform: rotate(210deg);
+}
+
+.rightSlant {
+  width: 2px;
+  margin-left: 40px;
+  height: 20px;
+  background-color: lightgray;
+  transform: rotate(140deg);
+}
+
+.treenodepointer {
+  display: flex;
+}
+
+.treenodehead {
+  margin: 0px 100px;
+}
+
+.treenodelevelone {
+  display: flex;
+}
+
+.treenodelevelonenodeone {
+  margin-left: 60px;
+}
+
+.treenodelevelonenodetwo {
+  margin-left: 40px;
+}
+
+.treenodeleveltwo {
+  display: flex;
+  margin-top: 4px;
+}
+
+.treenodeleveltwonodeone {
+  margin-left: 30px;
+}
+
+.treenodeleveltwonodetwo {
+  margin-left: 20px;
+}
+
+.setDataStructureContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: -10px;
+}
+
+.setItem {
+  margin: 3px;
+}
+
+.skillsCategoryTreeStructureContainer {
+  padding: 10px;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.iconContainer {
+  display: inline;
+  flex-wrap: wrap;
+  cursor: pointer;
+}
+
+.iconName {
+  display: none;
+  font-size: xx-small;
+}
+
+.iconContainer:hover .iconName {
+  display: inline;
+}
+.showTextIconToggleButtonContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}

@@ -1,0 +1,48 @@
+.statusBadge {
+  display: flex;
+  border: 1px solid lightgray;
+  border-radius: 100px;
+  height: 30px;
+  object-fit: contain;
+  align-items: center;
+  padding: 10px;
+}
+
+.title {
+  font-size: 10px;
+  padding-left: 3px;
+  margin-top: 5px;
+}
+
+.badgeContainer {
+  margin-top: 10px;
+  display: flex;
+}
+
+.iconClass {
+  width: 10px;
+  color: #00cc44;
+  height: 10px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #00ff66 60%, #00cc44 100%);
+  box-shadow: 0 0 4px 4px #00ff66;
+  animation: liveGlow 1.2s infinite alternate, livePulse 1.2s infinite alternate;
+}
+
+@keyframes liveGlow {
+  0% {
+    box-shadow: 0 0 2px 2px #00ff66;
+  }
+  100% {
+    box-shadow: 0 0 24px 6px #00ff66;
+  }
+}
+
+@keyframes livePulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.25);
+  }
+}

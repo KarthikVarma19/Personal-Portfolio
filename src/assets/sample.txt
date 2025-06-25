@@ -1,0 +1,6 @@
+Element	Suggested Color	Bootstrap Class / Custom
+Page Background	#ffffff (white)	bg-white
+Card Background	#f8f9fa (very light gray)	bg-light
+Primary Text	#212529 (light black)	text-dark
+Secondary Text	#6c757d (gray for subtext)	text-secondary
+Borders	#dee2e6 (light gray)	border, border-light

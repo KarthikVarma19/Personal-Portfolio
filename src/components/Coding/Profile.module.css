@@ -1,0 +1,10 @@
+.profileContainer {
+  display: flex;
+  text-align: center;
+}
+.codingPlatformLogo {
+  object-fit: fill;
+  height: 30px;
+  width: 30px;
+}
+

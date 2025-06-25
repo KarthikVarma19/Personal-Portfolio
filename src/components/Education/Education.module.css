@@ -1,0 +1,9 @@
+.timeLine {
+  margin-top: 10px;
+}
+
+.instituteName:hover {
+  color: #2196f3;
+  cursor: pointer;
+  text-decoration: underline;
+}

@@ -1,0 +1,8 @@
+.dashboardNavbarProfilePic {
+  border-radius: 10px;
+}
+
+.dashboardNavbarProfilePic:hover {
+  transform: scale(2);
+  transition: transform 0.3s ease;
+}

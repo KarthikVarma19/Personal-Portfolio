@@ -1,0 +1,24 @@
+.navbar {
+  display: flex;
+  justify-content: space-evenly;
+  position: sticky;
+  top: 0;
+  /* background-color: #f8f9fa; */
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  margin-bottom: 20px;
+}
+.navbarEmail {
+  text-decoration: underline;
+  text-decoration-color: lightgray;
+}
+
+.navbarOpener {
+  /* background-color: white;  */
+  border-radius: 100px;
+  padding: 2px;
+}
+
+.navbarComponent {
+  margin-top: 10px;
+}
