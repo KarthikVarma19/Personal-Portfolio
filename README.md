@@ -1,13 +1,57 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+#  Personal Portfolio – helloimkarthik.vercel.app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A sleek and responsive personal portfolio website built using **ReactJS**, **Bootstrap**, and **MUI**, designed to showcase projects, skills, and contact information with dynamic sections and a modern UI.
 
-## Expanding the ESLint configuration
+##  Live Demo
+ [Visit Portfolio](https://helloimkarthik.vercel.app/)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# Personal-Portfolio
+##  Technologies Used
+- **ReactJS** – Component-based structure and state management
+- **Bootstrap** – Layouts and responsive design
+- **MUI (Material UI)** – Rich set of pre-built UI components
+
+##  Features
+-  **Fully Responsive Design**: Mobile-first approach, adapts smoothly to all screen sizes
+-  **Dynamic Sections**: Easily update your Projects, Skills, and Contact data
+-  **Professional Timeline**: Clean layout to represent your growth and achievements
+-  **Minimal & Fast**: Built with performance and clarity in mind
+
+##  Folder Structure
+```
+├── public/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   ├── data/
+│   ├── App.js
+│   └── index.js
+```
+
+## Getting Started
+
+1. **Clone this repo**
+   ```bash
+   git clone https://github.com/KarthikVarma19/Job-Portal.git
+   cd Job-Portal
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Run it locally**
+   ```bash
+   npm start
+   ```
+
+##  Author
+
+Created and maintained by [Karthik Varma](https://www.linkedin.com/in/karthikvarmaganaraju/) – happy to connect!
+
+---
+
+Feel free to fork the repo, customize it, and use it as a launchpad for your own personal site. If you found this project helpful, a ⭐️ would be appreciated!
+```
