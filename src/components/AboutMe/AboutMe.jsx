@@ -35,11 +35,13 @@ export default function AboutMe() {
           </p>
           {/* CTA */}
           <button className={`btn mb-3 ${styles.viewResumeBtn}`}>
-            <span>
-              <LinkOutlined />
-            </span>
-            {"   "}
-            View Resume
+            <a href="https://drive.google.com/file/d/1z8xFqHq9tpVZezCu-51Cb38WqoiLvwS1/view">
+              <span>
+                <LinkOutlined />
+              </span>
+              {"   "}
+              View Resume
+            </a>
           </button>
           {/* Bio */}
           <p>

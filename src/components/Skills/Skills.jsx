@@ -51,7 +51,8 @@ const Skills = () => {
   const TreeNode = ({ Icon, skillName }) => {
     return (
       <>
-        <div className={styles.treenode}>{Icon && <Icon size="20px" />}</div>
+        <div className={styles.treenode}>{skillName}</div>
+        {/* <div className={styles.treenode}>{Icon && <Icon size="20px" />}</div> */}
         <div className={styles.treenodepointer}>
           {/* Left Slant */}
           <div className={styles.leftSlant}></div>
@@ -120,18 +121,22 @@ const Skills = () => {
                 </div>
                 <div className={styles.treenodelevelone}>
                   <div className={styles.treenodelevelonenodeone}>
-                    <TreeNode Icon={FaJs} size="20px" />
+                    <TreeNode Icon={FaJs} size="20px" skillName={"JS"} />
                   </div>
                   <div className={styles.treenodelevelonenodetwo}>
-                    <TreeNode Icon={BiLogoTypescript} size="20px" />
+                    <TreeNode
+                      Icon={BiLogoTypescript}
+                      size="20px"
+                      skillName={"TS"}
+                    />
                   </div>
                 </div>
                 <div className={styles.treenodeleveltwo}>
                   <div className={styles.treenodeleveltwonodeone}>
-                    <TreeNode Icon={FaHtml5} size="20px" />
+                    <TreeNode Icon={FaHtml5} size="20px" skillName={"HTML"} />
                   </div>
                   <div className={styles.treenodeleveltwonodetwo}>
-                    <TreeNode Icon={FaCss3Alt} size="20px" />
+                    <TreeNode Icon={FaCss3Alt} size="20px" skillName={"CSS"} />
                   </div>
                 </div>
               </ul>

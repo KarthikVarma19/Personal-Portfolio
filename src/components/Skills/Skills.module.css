@@ -72,31 +72,38 @@
 
 .treenodehead {
   margin: 0px 100px;
+  font-size: xx-small;
 }
 
 .treenodelevelone {
   display: flex;
+  font-size: xx-small;
 }
 
 .treenodelevelonenodeone {
   margin-left: 60px;
+  font-size: xx-small;
 }
 
 .treenodelevelonenodetwo {
   margin-left: 40px;
+  font-size: xx-small;
 }
 
 .treenodeleveltwo {
   display: flex;
   margin-top: 4px;
+  font-size: xx-small;
 }
 
 .treenodeleveltwonodeone {
   margin-left: 30px;
+  font-size: xx-small;
 }
 
 .treenodeleveltwonodetwo {
   margin-left: 20px;
+  font-size: xx-small;
 }
 
 .setDataStructureContainer {

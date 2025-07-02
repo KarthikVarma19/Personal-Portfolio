@@ -234,13 +234,13 @@ function DashboardLayoutCustomPageItems(props) {
       router={router}
       theme={demoTheme}
       branding={{
-        logo: (
-          <img
-            src="https://res.cloudinary.com/karthikvarma/image/upload/v1750177387/Peronal/myprofile_bgremoved_pic.png"
-            alt="KV Logo"
-            className={`${styles.dashboardNavbarProfilePic}`}
-          />
-        ),
+        // logo: (
+        //   <img
+        //     src="https://res.cloudinary.com/karthikvarma/image/upload/v1750177387/Peronal/myprofile_bgremoved_pic.png"
+        //     alt="KV Logo"
+        //     className={`${styles.dashboardNavbarProfilePic}`}
+        //   />
+        // ),
         title: "Karthik Varma",
         homeUrl: "/",
       }}

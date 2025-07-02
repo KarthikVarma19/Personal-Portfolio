@@ -122,10 +122,10 @@ const style = {
 const Resume = () => {
   const data = {
     resumeEmbedDriveLink:
-      "https://drive.google.com/file/d/11HDEvFzpdV0mQi63VaCn1yqpfaQ6BUxA/preview",
+      "https://drive.google.com/file/d/1z8xFqHq9tpVZezCu-51Cb38WqoiLvwS1/preview",
     resumeViewDriveLink:
-      "https://drive.google.com/file/d/11HDEvFzpdV0mQi63VaCn1yqpfaQ6BUxA/view",
-    resumeLastUpdatedDate: "20/06/2025",
+      "https://drive.google.com/file/d/1z8xFqHq9tpVZezCu-51Cb38WqoiLvwS1/view",
+    resumeLastUpdatedDate: "30/06/2025",
     resumeShareList: ["email", "whatsapp", "twitter", "telegram", "linkedin"],
   };
 
