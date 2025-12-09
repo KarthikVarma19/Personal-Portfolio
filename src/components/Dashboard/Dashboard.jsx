@@ -1,7 +1,5 @@
 import * as React from "react";
 import PropTypes from "prop-types";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
 import { createTheme } from "@mui/material/styles";
 import IconButton from "@mui/material/IconButton";
 import ListItem from "@mui/material/ListItem";
@@ -15,7 +13,6 @@ import {
   DashboardSidebarPageItem,
 } from "@toolpad/core/DashboardLayout";
 import { useDemoRouter } from "@toolpad/core/internal";
-
 import Portfolio from "../Portfolio/Portfolio";
 
 import styles from "./Dashboard.module.css";
@@ -155,6 +152,7 @@ const demoTheme = createTheme({
 function DemoPageContent({ pathname }) {
   switch (pathname) {
     case "/portfolio":
+      
       return <Portfolio />;
     case "/aboutme":
       return <AboutMe />;
@@ -166,26 +164,15 @@ function DemoPageContent({ pathname }) {
       return <Contact />;
     case "/projects":
       return <Projects />;
-    case "/":
+    default:
       return (
+        <>
+          <AboutMe />
         <TawkMessengerReact
           propertyId="6853d3d94420ce190d172093"
           widgetId="1iu3n735u"
-        />
-      );
-    default:
-      return (
-        <Box
-          sx={{
-            py: 4,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            textAlign: "center",
-          }}
-        >
-          <Typography>Dashboard content for {pathname}</Typography>
-        </Box>
+          />
+        </>
       );
   }
 }
@@ -194,7 +181,7 @@ DemoPageContent.propTypes = {
   pathname: PropTypes.string.isRequired,
 };
 
-function DashboardLayoutCustomPageItems(props) {
+function DashboardLayoutCustomPageItems() {
   const router = useDemoRouter("/");
 
   // preview-start
@@ -234,16 +221,17 @@ function DashboardLayoutCustomPageItems(props) {
       router={router}
       theme={demoTheme}
       branding={{
-        // logo: (
-        //   <img
-        //     src="https://res.cloudinary.com/karthikvarma/image/upload/v1750177387/Peronal/myprofile_bgremoved_pic.png"
-        //     alt="KV Logo"
-        //     className={`${styles.dashboardNavbarProfilePic}`}
-        //   />
-        // ),
+        logo: (
+          <img
+            src="/karthik-varma-profile-pic.jpeg"
+            alt="Karthik Varma"
+            className={styles.dashboardNavbarProfilePic}
+          />
+        ),
         title: "Karthik Varma",
         homeUrl: "/",
       }}
+      
     >
       {/* preview-start */}
       <DashboardLayout renderPageItem={renderPageItem}>
@@ -253,13 +241,5 @@ function DashboardLayoutCustomPageItems(props) {
     </AppProvider>
   );
 }
-
-DashboardLayoutCustomPageItems.propTypes = {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * Remove this when copying and pasting into your project.
-   */
-  window: PropTypes.func,
-};
 
 export default DashboardLayoutCustomPageItems;

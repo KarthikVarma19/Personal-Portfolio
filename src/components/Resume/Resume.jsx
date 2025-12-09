@@ -1,7 +1,10 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./Resume.module.css";
 import { DownloadOutlined, ShareOutlined } from "@mui/icons-material";
 import { ShareSocial } from "react-share-social";
+import { getResumeData } from "../../utils/portfolio.data";
+import PropTypes from "prop-types";
+import Footer from "../Footer/Footer";
 
 const RandomJoke = () => {
   const jokes = [
@@ -68,9 +71,9 @@ const RandomJoke = () => {
     ];
 
   return (
-    <>
+    <div>
       <p>{randomJoke}</p>
-    </>
+    </div>
   );
 };
 
@@ -102,7 +105,8 @@ const ShareBox = ({ resumeViewDriveLink, resumeShareList, setShareBox }) => {
     </div>
   );
 };
-// We can use inline-style
+
+
 const style = {
   root: {
     borderRadius: 3,
@@ -120,21 +124,14 @@ const style = {
 };
 
 const Resume = () => {
-  const data = {
-    resumeEmbedDriveLink:
-      "https://drive.google.com/file/d/1z8xFqHq9tpVZezCu-51Cb38WqoiLvwS1/preview",
-    resumeViewDriveLink:
-      "https://drive.google.com/file/d/1z8xFqHq9tpVZezCu-51Cb38WqoiLvwS1/view",
-    resumeLastUpdatedDate: "30/06/2025",
-    resumeShareList: ["email", "whatsapp", "twitter", "telegram", "linkedin"],
-  };
-
   const [isLoading, setIsLoading] = useState(true);
   const [shareBox, setShareBox] = useState(false);
 
+  const data = getResumeData();
+
   useEffect(() => {
     const timer = setInterval(() => setIsLoading(false), 2500);
-    return () => clearInterval(timer); // Cleanup the interval on unmount
+    return () => clearInterval(timer); 
   }, []);
 
   const handleLoad = () => {
@@ -142,86 +139,81 @@ const Resume = () => {
   };
 
   return (
-    <section className={`container-fluid`}>
-      <div className={`${styles.cardOuterContainer}`}>
-        <div
-          className={`d-flex flex-row justify-content-between ${styles.resumeHeaderContainer}`}
-        >
-          <div>
-            <span
-              style={{
-                fontFamily: "monospace",
-                fontSize: "10px",
-                textAlign: "right",
-              }}
-            >
-              Last Updated: {data.resumeLastUpdatedDate}
-            </span>
-          </div>
-          <div className="d-flex flex-row justify-content-between">
-            <button
-              className={`btn ${styles.Button}`}
-              onClick={() => setShareBox((toggle) => !toggle)}
-            >
-              <ShareOutlined fontSize="small" />
-              <span className="d-none d-md-block">Share</span>
-            </button>
-            <button
-              className={`btn ${styles.Button}`}
-              onClick={() => {
-                window.open(data.resumeViewDriveLink, "_blank");
-              }}
-            >
-              <DownloadOutlined fontSize="small" />
-              <span className="d-none d-md-block">Download</span>
-            </button>
-          </div>
-          {shareBox && !isLoading && (
-            <ShareBox
-              resumeViewDriveLink={data.resumeViewDriveLink}
-              resumeShareList={data.resumeShareList}
-              setShareBox={setShareBox}
-            />
-          )}
-        </div>
-
-        {isLoading ? (
-          <div
+    <>
+    <div className={`${styles.cardOuterContainer} m-3 p-2 d-flex flex-column justify-content-start`}>
+      <div className={`d-flex flex-row justify-content-between ${styles.resumeHeaderContainer}`}>
+        <div>
+          <span
             style={{
-              position: "relative",
-              top: "50%",
-              left: "50%",
-              transform: "translate(-50%, -50%)",
-              textAlign: "center",
+              fontFamily: "monospace",
+              fontSize: "10px",
+              textAlign: "right",
             }}
           >
-            <div
-              className={`spinner-border ${styles.loadingSpinner}`}
-              role="status"
-            >
-              <span className="visually-hidden">Loading...</span>
-            </div>
-            <RandomJoke />
-          </div>
-        ) : (
-          <iframe
-            src={data.resumeEmbedDriveLink}
-            style={{
-              width: "100%",
-              height: "100%",
-              border: "none",
-              borderRadius: "10px",
-              title: "pdf",
+            Last Updated: {data.resumeLastUpdatedDate}
+          </span>
+        </div>
+        <div className="d-flex flex-row justify-content-between">
+          <button
+            className={`btn ${styles.Button}`}
+            onClick={() => setShareBox((toggle) => !toggle)}
+          >
+            <ShareOutlined fontSize="small" />
+            <span className="d-none d-md-block">Share</span>
+          </button>
+          <button
+            className={`btn ${styles.Button}`}
+            onClick={() => {
+              window.open(data.resumeViewDriveLink, "_blank");
             }}
-            allow="autoplay"
-            onLoad={() => {
-              handleLoad();
-            }}
-          ></iframe>
+          >
+            <DownloadOutlined fontSize="small" />
+            <span className="d-none d-md-block">Download</span>
+          </button>
+        </div>
+        {shareBox && !isLoading && (
+          <ShareBox
+            resumeViewDriveLink={data.resumeViewDriveLink}
+            resumeShareList={data.resumeShareList}
+            setShareBox={setShareBox}
+          />
         )}
       </div>
-    </section>
+
+      {isLoading ? (
+        <div
+          style={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            textAlign: "center",
+          }}
+        >
+          <output className={`spinner-border ${styles.loadingSpinner}`}>
+            <span className="visually-hidden">Loading...</span>
+          </output>
+          <RandomJoke />
+        </div>
+      ) : (
+      <iframe
+        title="pdf"
+        src={data.resumeEmbedDriveLink}
+        className={styles.iframe}
+        allow="autoplay"
+        onLoad={handleLoad}
+      ></iframe>
+      )}
+      </div>
+      <Footer />
+    </>   
   );
+};
+
+ShareBox.propTypes = {
+  resumeViewDriveLink: PropTypes.string,
+  resumeShareList: PropTypes.array,
+  setShareBox: PropTypes.func,
 };
 
 export default Resume;

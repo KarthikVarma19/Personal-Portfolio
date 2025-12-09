@@ -1,0 +1,18 @@
+.contact-info-blue {
+    color: #1976d2;
+}
+
+.contactContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.map {
+  padding: 10px;
+}
+
+.cardOuterContainer {
+  height: 100%;
+}

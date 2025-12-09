@@ -1,6 +1,7 @@
-import { containerClasses } from "@mui/material";
 import styles from "./CodingStats.module.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import Footer from "../Footer/Footer";
+import { getCodingStatsData } from "../../utils/portfolio.data";
 
 const RandomJoke = () => {
   const jokes = [
@@ -67,15 +68,15 @@ const RandomJoke = () => {
     ];
 
   return (
-    <>
+    <div>
       <p>{randomJoke}</p>
-    </>
+    </div>
   );
 };
 
 const CodingStats = () => {
+  const codingStatsData = getCodingStatsData();
   const [isLoading, setIsLoading] = useState(true);
-
   setInterval(() => setIsLoading(false), 3500);
 
   const handleLoad = () => {
@@ -83,42 +84,43 @@ const CodingStats = () => {
   };
 
   return (
-    <section className={`container ${styles.cardOuterContainer}`}>
-      <div style={{ position: "relative", width: "100%", height: "100%" }}>
-        {isLoading ? (
-          <div
-            style={{
-              position: "absolute",
-              top: "50%",
-              left: "50%",
-              transform: "translate(-50%, -50%)",
-              textAlign: "center",
-            }}
-          >
+    <>
+      <section className={`${styles.cardOuterContainer} m-3 p-2`}>
+        <div style={{ position: "relative", width: "100%", height: "100%" }}>
+          {isLoading ? (
             <div
-              className={`spinner-border ${styles.loadingSpinner}`}
-              role="status"
+              style={{
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+                textAlign: "center",
+              }}
             >
-              <span className="visually-hidden">Loading...</span>
+              <output className={`spinner-border ${styles.loadingSpinner}`}>
+                <span className="visually-hidden">Loading...</span>
+              </output>
+              <RandomJoke />
             </div>
-            <RandomJoke />
-          </div>
-        ) : (
-          <iframe
-            src="https://codolio.com/profile/KarthikVarma19"
-            style={{
-              width: "100%",
-              height: "100%",
-              border: "none",
-              borderRadius: "10px",
-            }}
-            onLoad={() => {
-              handleLoad();
-            }}
-          ></iframe>
-        )}
-      </div>
-    </section>
+          ) : (
+              <iframe
+                title="Coding Stats"
+                src={codingStatsData.codingStatsUrl}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  border: "none",
+                  borderRadius: "10px",
+                }}
+                onLoad={() => {
+                  handleLoad();
+                }}
+              ></iframe>
+          )}
+        </div>
+      </section>
+      <Footer />
+    </>
   );
 };
 

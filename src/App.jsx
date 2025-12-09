@@ -4,9 +4,7 @@ import DashboardLayoutCustomPageItems from "./components/Dashboard/Dashboard";
 
 const App = () => {
   return (
-    <>
       <DashboardLayoutCustomPageItems />
-    </>
   );
 };
 

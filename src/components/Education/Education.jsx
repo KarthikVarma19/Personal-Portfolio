@@ -4,42 +4,46 @@ import TimelineItem from "@mui/lab/TimelineItem";
 import TimelineSeparator from "@mui/lab/TimelineSeparator";
 import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
-import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import Typography from "@mui/material/Typography";
 import styles from "./Education.module.css";
+import PropTypes from "prop-types";
+import { getMyEducationData } from "../../utils/portfolio.data";
 
 export default function Education() {
-  const myEducationData = [
-    {
-      institutionName: "Anil Neerukonda Institute of Technology and Sciences",
-      institutionShortName: "ANITS",
-      institutionLogoUrl:
-        "https://res.cloudinary.com/karthikvarma/image/upload/v1750181761/Peronal/antislogo.jpg",
-      institutionWebsiteLink: "https://www.anits.edu.in",
-      qualification: "B.Tech - Information Technology",
-      result: "CGPA : 9.3",
-    },
-    {
-      institutionName: "Government Polytechnic, Visakhapatnam",
-      institutionLogoUrl:
-        "https://res.cloudinary.com/karthikvarma/image/upload/v1750181756/Peronal/gptvlogo-removebg.png",
-      institutionShortName: "GPTV",
-      institutionWebsiteLink: "https://www.govtpolyvisakhapatnam.in/",
-      qualification: "Diploma - Electrical & Electronics Engineering",
-      result: "Percentage : 87.95%",
-    },
-    {
-      institutionName: "Chaitanya Public School, Ukkunagaram",
-      institutionShortName: "CPS",
-      institutionLogoUrl:
-        "https://res.cloudinary.com/karthikvarma/image/upload/v1750181756/Peronal/cpslogo-removebg.png",
-      institutionWebsiteLink: "https://www.srishtiworldschool.in/",
-      qualification: "10th Class - AP SSC",
-      result: "CGPA : 9.3",
-    },
-  ];
+  const myEducationData = getMyEducationData();
+  return (
+    <div
+      className={styles.timeLine}
+      style={{ fontFamily: "Poppins, sans-serif" }}
+    >
+      <Timeline position="right">
+        {myEducationData.map(
+          ({
+            institutionName,
+            institutionLogoUrl,
+            institutionShortName,
+            institutionWebsiteLink,
+            qualification,
 
-  const QualificationItem = ({
+            result,
+          }) => (
+            <QualificationItem
+              key={institutionName + institutionShortName + qualification + result}
+              institutionName={institutionName}
+              institutionLogoUrl={institutionLogoUrl}
+              institutionShortName={institutionShortName}
+              institutionWebsiteLink={institutionWebsiteLink}
+              qualification={qualification}
+              result={result}
+            />
+          )
+        )}
+      </Timeline>
+    </div>
+  );
+}
+
+const QualificationItem = ({
     institutionName,
     institutionLogoUrl,
     institutionShortName,
@@ -53,6 +57,7 @@ export default function Education() {
           variant=""
           href={institutionWebsiteLink}
           target="_blank"
+          rel="noopener noreferrer"
           style={{
             textTransform: "none",
             padding: 0,
@@ -114,33 +119,14 @@ export default function Education() {
     );
   };
 
-  return (
-    <div
-      className={styles.timeLine}
-      style={{ fontFamily: "Poppins, sans-serif" }}
-    >
-      <Timeline position="right">
-        {myEducationData.map(
-          ({
-            institutionName,
-            institutionLogoUrl,
-            institutionShortName,
-            institutionWebsiteLink,
-            qualification,
 
-            result,
-          }) => (
-            <QualificationItem
-              institutionName={institutionName}
-              institutionLogoUrl={institutionLogoUrl}
-              institutionShortName={institutionShortName}
-              institutionWebsiteLink={institutionWebsiteLink}
-              qualification={qualification}
-              result={result}
-            />
-          )
-        )}
-      </Timeline>
-    </div>
-  );
-}
+
+
+QualificationItem.propTypes = {
+  institutionName: PropTypes.string,
+  institutionLogoUrl: PropTypes.string,
+  institutionShortName: PropTypes.string,
+  institutionWebsiteLink: PropTypes.string,
+  qualification: PropTypes.string,
+  result: PropTypes.string,
+};

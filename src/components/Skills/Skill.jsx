@@ -1,14 +1,18 @@
 import styles from "./Skill.module.css";
-const Skill = ({ Icon, skillName }) => {
+import PropTypes from "prop-types";
+
+const Skill = ({ skillName }) => {
   return (
-    <>
-      <div className={styles.skillContainer}>
-        <div className={styles.iconContainer}>
-          <span className={styles.iconName}>{skillName}</span>
-        </div>
+    <div className={styles.skillContainer}>
+      <div className={styles.iconContainer}>
+        <span className={styles.iconName}>{skillName}</span>
       </div>
-    </>
+    </div>
   );
+};
+
+Skill.propTypes = {
+  skillName: PropTypes.string,
 };
 
 export default Skill;

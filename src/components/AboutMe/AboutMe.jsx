@@ -1,25 +1,34 @@
 import Footer from "../Footer/Footer";
 import styles from "./AboutMe.module.css";
 import {
-  Email as EmailIcon,
-  GitHub as GitHubIcon,
-  LinkedIn as LinkedInIcon,
-  LinkOutlined,
-  Twitter as TwitterIcon,
+  Email as EmailIcon, GitHub as GitHubIcon,
+  LinkedIn as LinkedInIcon, LinkOutlined, Twitter as TwitterIcon
 } from "@mui/icons-material";
 
 export default function AboutMe() {
+
+  const data = {
+    name: "Karthik Varma",
+    title: "Software Engineer · Competitive Programmer · MERN Stack · Tech Writer",
+    description: "Hi! I’m Karthik — passionate about building scalable full‑stack applications, solving complex problems, and writing technical content. When I'm not coding, I enjoy running, tech meetups, and making experiments on latest tech.",
+    address: "Gachibowli, Hyderabad, Telangana, india",
+    resumeUrl: "https://drive.google.com/file/d/1z8xFqHq9tpVZezCu-51Cb38WqoiLvwS1/view",
+    email: "ganarajukarthikvarma1635@gmail.com",
+    github: "https://github.com/KarthikVarma19",
+    linkedin: "https://linkedin.com/in/karthikvarmaganaraju",
+    twitter: "https://twitter.com/karthik_varmag",
+    tags: ["#backend", "#MERN", "#DSA"],
+    graduation: "2026",
+    education: "ANITS, Visakhapatnam",
+  }
+
   return (
     <>
-      <div
-        className={`row align-items-center ${styles.cardOuterContainer} m-3`}
-      >
+      <div className={`row align-items-center ${styles.cardOuterContainer} m-3`}>
         {/* Profile Image */}
         <div className="col-md-4 text-center mb-md-0">
-          <img
-            src="https://res.cloudinary.com/karthikvarma/image/upload/v1750177387/Peronal/myprofile_bgremoved_pic.png"
-            alt="Karthik Varma"
-            className="rounded-circle img-fluid"
+          <img src="/karthik-varma-profile-pic.jpeg"
+            alt="Karthik Varma" className="rounded-circle img-fluid"
             style={{ width: "200px", height: "200px", objectFit: "cover" }}
           />
         </div>
@@ -27,15 +36,16 @@ export default function AboutMe() {
         {/* Content */}
         <div className="col-md-8">
           {/* Name & Title */}
-          <h2 className="display-5">Karthik Varma</h2>
+          <h2 className="display-5">{data.name}</h2>
           <p className="lead 	d-none d-md-block">
-            Software Engineer · MERN Stack · Tech Writer
+            {data.title}
             <br />
-            Visakhapatnam, Andhra Pradesh
+            {data.address}
           </p>
           {/* CTA */}
           <button className={`btn mb-3 ${styles.viewResumeBtn}`}>
-            <a href="https://drive.google.com/file/d/1z8xFqHq9tpVZezCu-51Cb38WqoiLvwS1/view">
+            <a href={data.resumeUrl} target="_blank" rel="noopener noreferrer"
+>
               <span>
                 <LinkOutlined />
               </span>
@@ -44,17 +54,12 @@ export default function AboutMe() {
             </a>
           </button>
           {/* Bio */}
-          <p>
-            Hi! I’m Karthik — passionate about building scalable full‑stack
-            applications, solving complex problems, and writing technical
-            content. When I'm not coding, I enjoy running, tech meetups, and
-            making experiments on latest tech.
-          </p>
+          <p>{data.description}</p>
           {/* Tags */}
           <div className="mb-3">
-            {["#backend", "#MERN", "#DSA"].map((tag) => (
-              <span key={tag} className="badge bg-secondary me-2">
-                {tag}
+            {data.tags.map((hashtag) => (
+              <span key={hashtag} className="badge bg-secondary me-2">
+                {hashtag}
               </span>
             ))}
           </div>
@@ -63,42 +68,29 @@ export default function AboutMe() {
             <div className="col-6">
               <strong>GRADUATION</strong>
               <br />
-              2026
+              {data.graduation}
             </div>
             <div className="col-6">
               <strong>EDUCATION</strong>
               <br />
-              ANITS, Visakhapatnam
+              {data.education}
             </div>
           </div>
           {/* Social Icons */}
           <div className="d-flex fs-3">
-            <a
-              href="mailto:ganarajukarthikvarma1635@gmail.com"
-              target="_blank"
-              className="me-3"
-            >
+            <a href={`mailto:${data.email}`} target="_blank" className="me-3" rel="noopener noreferrer">
               <EmailIcon />
             </a>
-            <a
-              href="https://github.com/KarthikVarma19"
-              target="_blank"
-              className="me-3"
-            >
+            <a href="https://github.com/KarthikVarma19" target="_blank" className="me-3" rel="noopener noreferrer"
+>
               <GitHubIcon />
             </a>
-            <a
-              href="https://linkedin.com/in/karthikvarmaganaraju"
-              target="_blank"
-              className="me-3"
-            >
+            <a href="https://linkedin.com/in/karthikvarmaganaraju" target="_blank" className="me-3" rel="noopener noreferrer"
+>
               <LinkedInIcon />
             </a>
-            <a
-              href="https://twitter.com/karthik_varmag"
-              target="_blank"
-              className="me-3"
-            >
+            <a href="https://twitter.com/karthik_varmag" target="_blank" className="me-3" rel="noopener noreferrer"
+>
               <TwitterIcon />
             </a>
           </div>

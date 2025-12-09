@@ -1,36 +1,20 @@
-import { FaJs } from "react-icons/fa";
-import { FaHtml5 } from "react-icons/fa";
-import { FaCss3Alt } from "react-icons/fa";
-import { BiLogoTypescript } from "react-icons/bi";
-import { FaReact } from "react-icons/fa";
-import { DiMongodb } from "react-icons/di";
-import { BiLogoPostgresql } from "react-icons/bi";
-import { SiMysql } from "react-icons/si";
-import { DiSqllite } from "react-icons/di";
-import { IoLogoFirebase } from "react-icons/io5";
-import { FaGitAlt } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
-import { FaDocker } from "react-icons/fa";
-import { SiPostman } from "react-icons/si";
-import { FaNodeJs } from "react-icons/fa";
-import { SiExpress } from "react-icons/si";
-import { FaJava } from "react-icons/fa";
-import { VscVscode } from "react-icons/vsc";
-import { SiRedux } from "react-icons/si";
-import { BsThreeDots } from "react-icons/bs";
-
-import Skill from "./Skill";
-
-import styles from "./Skills.module.css";
 import { useState } from "react";
+import { FaJs, FaHtml5, FaCss3Alt, FaReact, FaGitAlt, FaGithub, FaDocker, FaNodeJs, FaJava } from "react-icons/fa";
+import { BiLogoTypescript, BiLogoPostgresql } from "react-icons/bi";
+import { DiMongodb, DiSqllite } from "react-icons/di";
+import { SiMysql, SiPostman, SiExpress } from "react-icons/si";
+import { IoLogoFirebase } from "react-icons/io5";
+import { VscVscode } from "react-icons/vsc";
+import { BsThreeDots } from "react-icons/bs";
 import { FormControlLabel, FormGroup, Switch } from "@mui/material";
+import styles from "./Skills.module.css";
 
 const Skills = () => {
   const LinkedListPointer = () => {
     return (
-      <>
-        <span style={{ color: "gray" }}>{"---->"}</span>
-      </>
+      <span style={{ color: "gray" }}>
+        {"---->"}
+      </span>
     );
   };
 
@@ -48,7 +32,7 @@ const Skills = () => {
       </>
     );
   };
-  const TreeNode = ({ Icon, skillName }) => {
+  const TreeNode = ({ skillName }) => {
     return (
       <>
         <div className={styles.treenode}>{skillName}</div>
@@ -96,7 +80,7 @@ const Skills = () => {
 
   return (
     <>
-      <div className={styles.showTextIconToggleButtonContainer}>
+      {/* <div className={styles.showTextIconToggleButtonContainer}>
         <FormGroup>
           <FormControlLabel
             control={
@@ -109,8 +93,8 @@ const Skills = () => {
             label="Names"
           />
         </FormGroup>
-      </div>
-      <div className="skills-section">
+      </div> */}
+      <div className="skills-section p-2">
         <div className="skills-categories">
           <div className={styles.skillsCategory}>
             <h6>Frontend</h6>

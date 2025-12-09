@@ -1,4 +1,5 @@
 import styles from "./Badge.module.css";
+import PropTypes from "prop-types";
 const Badge = ({ Icon, title }) => {
   return (
     <div className={`${styles.statusBadge} ${styles.glowBadge}`}>
@@ -8,6 +9,11 @@ const Badge = ({ Icon, title }) => {
       </div>
     </div>
   );
+};
+
+Badge.propTypes = {
+  Icon: PropTypes.elementType,
+  title: PropTypes.string,
 };
 
 export default Badge;
