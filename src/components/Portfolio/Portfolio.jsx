@@ -6,7 +6,7 @@ import Footer from "../Footer/Footer";
 
 const Portfolio = () => {
   return (
-    <div className="w-full h-full page-enter overflow-hidden">
+    <div className="w-full h-full page-enter overflow-y-auto-scrollbar">
       <div className="row d-flex flex-row align-items-center justify-content-center p-2">
         <div className="col-12 col-md-6 col-lg-4">
           <Card title="Education">

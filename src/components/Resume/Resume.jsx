@@ -123,7 +123,7 @@ const style = {
   },
 };
 
-const Resume = () => {
+const   Resume = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [shareBox, setShareBox] = useState(false);
 
@@ -140,7 +140,7 @@ const Resume = () => {
 
   return (
     <>
-    <div className={`${styles.cardOuterContainer} m-3 p-2 d-flex flex-column justify-content-start page-enter`}>
+    <div className={`${styles.cardOuterContainer} m-3 p-2 d-flex flex-column justify-content-start page-enter overflow-y-auto-scrollbar`}>
       <div className={`d-flex flex-row justify-content-between ${styles.resumeHeaderContainer}`}>
         <div>
           <span

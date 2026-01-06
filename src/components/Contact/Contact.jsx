@@ -61,7 +61,7 @@ const ContactDetails = () => {
 const Contact = () => {
   return (
     <>
-      <div className={`${styles.contactContainer} m-2 page-enter`}>
+      <div className={`${styles.contactContainer} m-2 page-enter overflow-y-auto-scrollbar`}>
         <div className={`col-12 col-md-6 d-none d-sm-block ${styles.cardOuterContainer}`}>
           <Card
             title="My Map"

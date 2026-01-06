@@ -170,8 +170,7 @@ function DemoPageContent({ pathname }) {
           <AboutMe />
         <TawkMessengerReact
           propertyId="6853d3d94420ce190d172093"
-          widgetId="1iu3n735u"
-          />
+          widgetId="1iu3n735u"/>
         </>
       );
   }

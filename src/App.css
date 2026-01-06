@@ -25,3 +25,8 @@ body {
     transform: none;
   }
 }
+
+.overflow-y-auto-scrollbar {
+  overflow-y: auto;
+  scrollbar-width: thin;
+}

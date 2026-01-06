@@ -9,7 +9,7 @@ const Projects = () => {
 
   return (
     <>
-    <div className="row d-flex flex-row align-items-center justify-content-center h-full w-full p-2 page-enter">
+    <div className="row d-flex flex-row align-items-center justify-content-center h-full w-full p-2 page-enter overflow-y-auto-scrollbar">
       {projectsData.map((project, index) => (
         <div key={project.projectName + ":" + index} className="col-12 col-md-4">
           <Card title={project.projectName}>

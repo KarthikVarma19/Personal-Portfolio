@@ -11,7 +11,7 @@ export default function AboutMe() {
 
   return (
     <>
-      <div className={`row align-items-center ${styles.cardOuterContainer} m-3 page-enter`}>
+      <div className={`row align-items-center ${styles.cardOuterContainer} m-3 page-enter overflow-y-auto-scrollbar`}>
         {/* Profile Image */}
         <div className="col-md-4 text-center mb-md-0">
           <img src="/karthik-varma-profile-pic.jpeg"

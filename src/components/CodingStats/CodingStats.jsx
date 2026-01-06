@@ -85,7 +85,7 @@ const CodingStats = () => {
 
   return (
     <>
-      <section className={`${styles.cardOuterContainer} m-3 p-2`}>
+      <section className={`${styles.cardOuterContainer} m-3 p-2 page-enter overflow-y-auto-scrollbar`}>
         <div style={{ position: "relative", width: "100%", height: "100%" }}>
           {isLoading ? (
             <div
