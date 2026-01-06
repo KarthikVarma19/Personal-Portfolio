@@ -2,13 +2,17 @@
   border: 1px solid lightgray;
   border-radius: 100px;
   height: 40px;
-  width: fit-content;
   align-items: center;
   padding: 7px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   width: "100%";
+  box-shadow: 0 0 12px rgba(76, 201, 240, 0.25);
+  font-weight: 500;
+}
+.cardHeader:hover {
+  background: linear-gradient(135deg,rgba(44, 136, 217, 0.2),rgba(76, 201, 240, 0.15));
 }
 
 .title {

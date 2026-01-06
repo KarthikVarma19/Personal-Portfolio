@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { FaJs, FaHtml5, FaCss3Alt, FaReact, FaGitAlt, FaGithub, FaDocker, FaNodeJs, FaJava } from "react-icons/fa";
 import { BiLogoTypescript, BiLogoPostgresql } from "react-icons/bi";
 import { DiMongodb, DiSqllite } from "react-icons/di";
@@ -6,7 +5,6 @@ import { SiMysql, SiPostman, SiExpress } from "react-icons/si";
 import { IoLogoFirebase } from "react-icons/io5";
 import { VscVscode } from "react-icons/vsc";
 import { BsThreeDots } from "react-icons/bs";
-import { FormControlLabel, FormGroup, Switch } from "@mui/material";
 import styles from "./Skills.module.css";
 
 const Skills = () => {
@@ -76,7 +74,6 @@ const Skills = () => {
       </>
     );
   };
-  const [showIcons, setShowIcons] = useState(true); // State to toggle icon visibility
 
   return (
     <>

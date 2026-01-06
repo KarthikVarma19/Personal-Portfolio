@@ -6,20 +6,20 @@ import Footer from "../Footer/Footer";
 
 const Portfolio = () => {
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-full page-enter overflow-hidden">
       <div className="row d-flex flex-row align-items-center justify-content-center p-2">
         <div className="col-12 col-md-6 col-lg-4">
-          <Card title="My Education">
+          <Card title="Education">
             <Education />
           </Card>
         </div>
         <div className="col-12 col-md-6 col-lg-4">
-          <Card title="My Skills">
+          <Card title="Skills">
             <Skills />
           </Card>
         </div>
         <div className="col-12 col-md-6 col-lg-4">
-          <Card title="My Profiles">
+          <Card title="Profiles">
             <Coding />
           </Card>
         </div>

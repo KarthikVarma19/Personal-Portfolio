@@ -4,27 +4,14 @@ import {
   Email as EmailIcon, GitHub as GitHubIcon,
   LinkedIn as LinkedInIcon, LinkOutlined, Twitter as TwitterIcon
 } from "@mui/icons-material";
+import { getAboutMeData } from "../../utils/portfolio.data";
 
 export default function AboutMe() {
-
-  const data = {
-    name: "Karthik Varma",
-    title: "Software Engineer · Competitive Programmer · MERN Stack · Tech Writer",
-    description: "Hi! I’m Karthik — passionate about building scalable full‑stack applications, solving complex problems, and writing technical content. When I'm not coding, I enjoy running, tech meetups, and making experiments on latest tech.",
-    address: "Gachibowli, Hyderabad, Telangana, india",
-    resumeUrl: "https://drive.google.com/file/d/1z8xFqHq9tpVZezCu-51Cb38WqoiLvwS1/view",
-    email: "ganarajukarthikvarma1635@gmail.com",
-    github: "https://github.com/KarthikVarma19",
-    linkedin: "https://linkedin.com/in/karthikvarmaganaraju",
-    twitter: "https://twitter.com/karthik_varmag",
-    tags: ["#backend", "#MERN", "#DSA"],
-    graduation: "2026",
-    education: "ANITS, Visakhapatnam",
-  }
+  const data = getAboutMeData();
 
   return (
     <>
-      <div className={`row align-items-center ${styles.cardOuterContainer} m-3`}>
+      <div className={`row align-items-center ${styles.cardOuterContainer} m-3 page-enter`}>
         {/* Profile Image */}
         <div className="col-md-4 text-center mb-md-0">
           <img src="/karthik-varma-profile-pic.jpeg"
@@ -50,7 +37,7 @@ export default function AboutMe() {
                 <LinkOutlined />
               </span>
               {"   "}
-              View Resume
+              Resume
             </a>
           </button>
           {/* Bio */}
@@ -81,16 +68,13 @@ export default function AboutMe() {
             <a href={`mailto:${data.email}`} target="_blank" className="me-3" rel="noopener noreferrer">
               <EmailIcon />
             </a>
-            <a href="https://github.com/KarthikVarma19" target="_blank" className="me-3" rel="noopener noreferrer"
->
+            <a href={data.github} target="_blank" className="me-3" rel="noopener noreferrer">
               <GitHubIcon />
             </a>
-            <a href="https://linkedin.com/in/karthikvarmaganaraju" target="_blank" className="me-3" rel="noopener noreferrer"
->
+            <a href={data.linkedin} target="_blank" className="me-3" rel="noopener noreferrer">
               <LinkedInIcon />
             </a>
-            <a href="https://twitter.com/karthik_varmag" target="_blank" className="me-3" rel="noopener noreferrer"
->
+            <a href={data.twitter} target="_blank" className="me-3" rel="noopener noreferrer">
               <TwitterIcon />
             </a>
           </div>

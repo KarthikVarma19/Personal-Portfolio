@@ -1,13 +1,21 @@
 .cardOuterContainer {
-  border-radius: 20px;
   margin: 10px;
   border: 1px solid #dee2e6;
-  max-height: fit-content;
-  min-height: 650px;
+  height: 650px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(14px);
+  border-radius: 18px;
+  overflow-y: auto;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.6),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .cardOuterContainer:hover {
   border: 1px solid #2196f3;
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8),0 0 20px rgba(44, 136, 217, 0.15);
 }
 
 .cardInnerContainer {
@@ -19,4 +27,8 @@
 .cardHeaderContainer {
   display: flex;
   margin-bottom: 5px;
+  position: sticky;
+  top: 0;
+  border-radius: 18px;
+  z-index: 1000;
 }

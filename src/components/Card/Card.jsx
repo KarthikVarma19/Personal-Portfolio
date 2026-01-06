@@ -9,7 +9,7 @@ const Card = ({ title , children}) => {
         <div className={styles.cardHeaderContainer}>
           <CardHeader title={title} />
         </div>
-        <div>
+        <div className={styles.cardContentContainer}>
           {children}
         </div>
       </div>

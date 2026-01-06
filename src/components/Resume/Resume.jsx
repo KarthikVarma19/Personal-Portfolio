@@ -140,7 +140,7 @@ const Resume = () => {
 
   return (
     <>
-    <div className={`${styles.cardOuterContainer} m-3 p-2 d-flex flex-column justify-content-start`}>
+    <div className={`${styles.cardOuterContainer} m-3 p-2 d-flex flex-column justify-content-start page-enter`}>
       <div className={`d-flex flex-row justify-content-between ${styles.resumeHeaderContainer}`}>
         <div>
           <span

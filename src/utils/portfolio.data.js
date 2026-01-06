@@ -1,71 +1,98 @@
+import { config } from "./config";
 
-const RESUME_EMBED_DRIVE_LINK = "https://drive.google.com/file/d/1cVMVb0Evi2pQBs03_qyr0xAgnusUQOZm/preview"
-const RESUME_VIEW_DRIVE_LINK="https://drive.google.com/file/d/1cVMVb0Evi2pQBs03_qyr0xAgnusUQOZm/view"
-const RESUME_LAST_UPDATED_DATE="30th November, 2025"
-const RESUME_SHARE_LIST = ["email", "whatsapp", "twitter", "telegram", "linkedin"]
+const projects = {
+  onlinefraud: {
+    name: "Onlinefraud.in - Scam & Grievance Reporting",
+    liveLink: "https://sax-violin-74798706.figma.site/",
+    githubRepoLink: "https://github.com/KarthikVarma19/",
+    projectIntro: "Built an anonymous scam and fraud reporting platform with proof-based submissions, community voting, risk scoring, and admin/authority verification to track and resolve trending scams.",
+    techStack: ["React.js", "Node.js + Express", "PostgreSQL", "Redis", "Neo4j"],
+  },
+  learnSphere: {
+    name: "LearnSphere – A Collaborative Learning Platform",
+    liveLink: "https://serif-office-14923277.figma.site/",
+    githubRepoLink: "https://github.com/KarthikVarma19/",
+    projectIntro: "Built a collaborative learning platform with room-based organization, topic-level discussions, resource sharing, and AI-powered insights for students, educators, and professionals.",
+    techStack: ["React.js", "Redux", "Go", "PostgreSQL", "Redis", "Supabase", "Shadcn UI"],
+  },
+  vahanPranam: {
+    name: "Vahan Pranam – A Vehicle Management Portal",
+    liveLink: "https://sticky-coyote-22357316.figma.site/",
+    githubRepoLink: "https://github.com/KarthikVarma19/",
+    projectIntro: "Built a unified vehicle management platform to track fuel, maintenance, and documents, generate reports, and deliver timely alerts for individuals and fleet managers.",
+    techStack: ["React.js", "Node.js + Express", "MongoDB", "Redis", "Shadcn UI"],
+  },
+  gadgetVault: {
+    name: "GadgetVault – Invoice & Warranty Tracker",
+    liveLink: "https://gear-native-28333139.figma.site/",
+    githubRepoLink: "https://github.com/KarthikVarma19/",
+    projectIntro: "Built a SaaS platform for managing gadget invoices and warranties with smart tracking, reminders, and analytics.",
+    techStack: ["React.js", "Node.js + Express", "MongoDB", "Redis", "Shadcn UI"],
+  },
+  trimrr: {
+    name: "TRIMRR - URL SHORTENER",
+    liveLink: "https://trimrr-urls.vercel.app/",
+    githubRepoLink: "https://github.com/KarthikVarma19/Trimrr",
+    projectIntro: "Built a full-stack URL Shortener app using ReactJS, Tailwind CSS, Supabase, and Shadcn UI, supporting user authentication, analytics, and QR code generation.",
+    techStack: ["ReactJS", "Tailwind CSS", "Supabase", "Shadcn UI"],
+  },
+  insiderJobs: {
+    name: "INSIDER JOBS - JOB PORTAL",
+    liveLink: "https://insiderjob-portal.vercel.app/",
+    githubRepoLink: "https://github.com/KarthikVarma19/Job-Portal",
+    projectIntro: "Developed a responsive job portal frontend featuring job search, filtering, pagination, and recruiter UI using React.js and Tailwind CSS.",
+    techStack: ["ReactJS", "Tailwind CSS", "Clerk Auth UI"],
+  },
+  portfolio: {
+    name: "PERSONAL PORTFOLIO",
+    liveLink: "https://helloimkarthik.vercel.app/",
+    githubRepoLink: "https://github.com/KarthikVarma19/Personal-Portfolio",
+    projectIntro: "Implemented a fully responsive and mobile-friendly UI, ensuring seamless user experience across all devices.",
+    techStack: ["ReactJS", "Bootstrap", "MUI UI Library"],
+  },
+};
 
-const TRIMRR_NAME="TRIMRR - URL SHORTENER"
-const TRIMRR_LIVE_LINK="https://trimrr-urls.vercel.app/"
-const TRIMRR_GITHUB_REPO_LINK="https://github.com/KarthikVarma19/Trimrr"
-const TRIMRR_PROJECT_INTRO="Built a full-stack URL Shortener app using ReactJS, Tailwind CSS, Supabase, and Shadcn UI, supporting user authentication, analytics, and QR code generation."
-const TRIMRR_TECH_STACK=["ReactJS", "Tailwind CSS", "Supabase", "Shadcn UI"]
-
-const INSIDERJOBS_NAME="INSIDER JOBS - JOB PORTAL"
-const INSIDERJOBS_LIVE_LINK="https://insiderjob-portal.vercel.app/"
-const INSIDERJOBS_GITHUB_REPO_LINK="https://github.com/KarthikVarma19/Job-Portal"
-const INSIDERJOBS_PROJECT_INTRO="Developed a responsive job portal frontend featuring job search, filtering, pagination, and recruiter UI using React.js and Tailwind CSS."
-const INSIDERJOBS_TECH_STACK=["ReactJS", "Tailwind CSS", "Clerk Auth UI"]
-
-const PORTFOLIO_NAME="PERSONAL PORTFOLIO"
-const PORTFOLIO_LIVE_LINK="https://helloimkarthik.vercel.app/"
-const PORTFOLIO_GITHUB_REPO_LINK="https://github.com/KarthikVarma19/Personal-Portfolio"
-const PORTFOLIO_PROJECT_INTRO="Implemented a fully responsive and mobile-friendly UI, ensuring seamless user experience across all devices."
-const PORTFOLIO_TECH_STACK=["ReactJS", "Bootstrap", "MUI UI Library"]
-
-const BTECH_INSTITUTION_NAME="Anil Neerukonda Institute of Technology and Sciences"
-const BTECH_INSTITUTION_SHORTNAME="ANITS"
-const BTECH_INSITUTUTION_LOGO="https://res.cloudinary.com/karthikvarma/image/upload/v1750181761/Peronal/antislogo.jpg"
-const BTECH_INSTITUTION_WEBSITE_URL="https://www.anits.org"
-const BTECH_INSTITUTION_QUALIFICATION="B.Tech - Information Technology"
-const BTECH_INSTITUTION_RESULT="CGPA : 9.3"
-
-const DIPLOMA_INSTITUTION_NAME="Government Polytechnic, Visakhapatnam"
-const DIPLOMA_INSTITUTION_SHORTNAME="GPTV"
-const DIPLOMA_INSITUTUTION_LOGO="https://res.cloudinary.com/karthikvarma/image/upload/v1750181756/Peronal/gptvlogo-removebg.png"
-const DIPLOMA_INSTITUTION_WEBSITE_URL="https://www.govtpolyvisakhapatnam.in/"
-const DIPLOMA_INSTITUTION_QUALIFICATION="Diploma - Electrical & Electronics Engineering"
-const DIPLOMA_INSTITUTION_RESULT="Percentage : 87.95%"
-
-const SCHOOL_INSTITUTION_NAME="Chaitanya Public School, Ukkunagaram"
-const SCHOOL_INSTITUTION_SHORTNAME="CPS"
-const SCHOOL_INSITUTUTION_LOGO="https://res.cloudinary.com/karthikvarma/image/upload/v1750181756/Peronal/cpslogo-removebg.png"
-const SCHOOL_INSTITUTION_WEBSITE_URL="https://www.srishtiworldschool.in/"
-const SCHOOL_INSTITUTION_QUALIFICATION="10th Class - AP SSC"
-const SCHOOL_INSTITUTION_RESULT="CGPA : 9.3"
-
-const CODOLIO_URL="https://codolio.com/profile/KarthikVarma19"
-
-const CONTACT_PHONE_NUMBER="+91 9676502330"
-const CONTACT_EMAIL_ID="ganarajukarthikvarma1635@gmail.com"
-const CONTACT_LINKEDIN_URL="https://www.linkedin.com/in/karthikvarmaganaraju/"
-const CONTACT_ADDRESS="Gachibowli, Hyderabad, Telangana, india"
-const CONTACT_WEBSITE_URL="www.karthik.rocks"
-const CONTACT_MAP_URL="https://www.google.com/maps/embed?origin=mfe&pb=!1m3!2m1!1sInncircles!6i13"
+const education = {
+  btech: {
+    institutionName: "Anil Neerukonda Institute of Technology and Sciences",
+    institutionShortName: "ANITS",
+    institutionLogoUrl: "https://res.cloudinary.com/karthikvarma/image/upload/v1750181761/Peronal/antislogo.jpg",
+    institutionWebsiteLink: "https://www.anits.org",
+    qualification: "B.Tech - Information Technology",
+    result: "Sep 2023 - May 2026 | CGPA : 9.2",
+  },
+  diploma: {
+    institutionName: "Government Polytechnic, Visakhapatnam",
+    institutionShortName: "GPTV",
+    institutionLogoUrl: "https://res.cloudinary.com/karthikvarma/image/upload/v1750181756/Peronal/gptvlogo-removebg.png",
+    institutionWebsiteLink: "https://www.govtpolyvisakhapatnam.in/",
+    qualification: "Diploma - Electrical & Electronics Engineering",
+    result: "Sep 2020 - May 2023 | CGPA : 8.8",
+  },
+  school: {
+    institutionName: "Chaitanya Public School, Ukkunagaram",
+    institutionShortName: "CPS",
+    institutionLogoUrl: "https://res.cloudinary.com/karthikvarma/image/upload/v1750181756/Peronal/cpslogo-removebg.png",
+    institutionWebsiteLink: "https://www.srishtiworldschool.in/",
+    qualification: "10th Class - AP SSC",
+    result: "Jun 2018 - Mar 2020 | CGPA : 9.3",
+  },
+};
 
 //Coding Sites URLs
-export const LEETCODE_URL="https://leetcode.com/u/KarthikVarma19/"
-export const CODECHEF_URL="https://www.codechef.com/users/karthikvarma19"
-export const CODEFORES_URL="https://codeforces.com/profile/Karthik_Varma"
-export const CODESTUDIO_URL="https://www.naukri.com/code360/profile/gkv_567"
-export const GEEKSFORGEEKS_URL="https://www.geeksforgeeks.org/user/karthikvarma19/"
+export const LEETCODE_URL = config.coding.leetcodeUrl;
+export const CODECHEF_URL = config.coding.codechefUrl;
+export const CODEFORES_URL = config.coding.codeforcesUrl;
+export const CODESTUDIO_URL = config.coding.codestudioUrl;
+export const GEEKSFORGEEKS_URL = config.coding.geeksforgeeksUrl;
 
 
 export const getResumeData = () => {
   return {
-    resumeEmbedDriveLink: RESUME_EMBED_DRIVE_LINK,
-    resumeViewDriveLink: RESUME_VIEW_DRIVE_LINK,
-    resumeLastUpdatedDate: RESUME_LAST_UPDATED_DATE,
-    resumeShareList: RESUME_SHARE_LIST,
+    resumeEmbedDriveLink: config.resume.embedDriveLink,
+    resumeViewDriveLink: config.resume.viewDriveLink,
+    resumeLastUpdatedDate: config.resume.lastUpdatedDate,
+    resumeShareList: config.resume.shareList,
   };
 };
 
@@ -73,25 +100,53 @@ export const getResumeData = () => {
 export const getProjectsData = () => {
   return [
     {
-      projectName: TRIMRR_NAME,
-      liveLink: TRIMRR_LIVE_LINK,
-      GitHubRepoLink: TRIMRR_GITHUB_REPO_LINK,
-      projectIntro: TRIMRR_PROJECT_INTRO,
-      TechStack: TRIMRR_TECH_STACK,
+      projectName: projects.onlinefraud.name,
+      liveLink: projects.onlinefraud.liveLink,
+      GitHubRepoLink: projects.onlinefraud.githubRepoLink,
+      projectIntro: projects.onlinefraud.projectIntro,
+      TechStack: projects.onlinefraud.techStack,
     },
     {
-      projectName: INSIDERJOBS_NAME,
-      liveLink: INSIDERJOBS_LIVE_LINK,
-      GitHubRepoLink: INSIDERJOBS_GITHUB_REPO_LINK,
-      projectIntro: INSIDERJOBS_PROJECT_INTRO,
-      TechStack: INSIDERJOBS_TECH_STACK,
+      projectName: projects.learnSphere.name,
+      liveLink: projects.learnSphere.liveLink,
+      GitHubRepoLink: projects.learnSphere.githubRepoLink,
+      projectIntro: projects.learnSphere.projectIntro,
+      TechStack: projects.learnSphere.techStack,
     },
     {
-      projectName: PORTFOLIO_NAME,
-      liveLink: PORTFOLIO_LIVE_LINK,
-      GitHubRepoLink: PORTFOLIO_GITHUB_REPO_LINK,
-      projectIntro: PORTFOLIO_PROJECT_INTRO,
-      TechStack: PORTFOLIO_TECH_STACK,
+      projectName: projects.vahanPranam.name,
+      liveLink: projects.vahanPranam.liveLink,
+      GitHubRepoLink: projects.vahanPranam.githubRepoLink,
+      projectIntro: projects.vahanPranam.projectIntro,
+      TechStack: projects.vahanPranam.techStack,
+    },
+    {
+      projectName: projects.gadgetVault.name,
+      liveLink: projects.gadgetVault.liveLink,
+      GitHubRepoLink: projects.gadgetVault.githubRepoLink,
+      projectIntro: projects.gadgetVault.projectIntro,
+      TechStack: projects.gadgetVault.techStack,
+    },
+    {
+      projectName: projects.trimrr.name,
+      liveLink: projects.trimrr.liveLink,
+      GitHubRepoLink: projects.trimrr.githubRepoLink,
+      projectIntro: projects.trimrr.projectIntro,
+      TechStack: projects.trimrr.techStack,
+    },
+    {
+      projectName: projects.insiderJobs.name,
+      liveLink: projects.insiderJobs.liveLink,
+      GitHubRepoLink: projects.insiderJobs.githubRepoLink,
+      projectIntro: projects.insiderJobs.projectIntro,
+      TechStack: projects.insiderJobs.techStack,
+    },
+    {
+      projectName: projects.portfolio.name,
+      liveLink: projects.portfolio.liveLink,
+      GitHubRepoLink: projects.portfolio.githubRepoLink,
+      projectIntro: projects.portfolio.projectIntro,
+      TechStack: projects.portfolio.techStack,
     },
   ];
 };
@@ -100,47 +155,63 @@ export const getProjectsData = () => {
 export const getMyEducationData = () => {
   return [
     {
-      institutionName: BTECH_INSTITUTION_NAME,
-      institutionShortName: BTECH_INSTITUTION_SHORTNAME,
-      institutionLogoUrl: BTECH_INSITUTUTION_LOGO,
-      institutionWebsiteLink: BTECH_INSTITUTION_WEBSITE_URL,
-      qualification: BTECH_INSTITUTION_QUALIFICATION,
-      result: BTECH_INSTITUTION_RESULT,
+      institutionName: education.btech.institutionName,
+      institutionShortName: education.btech.institutionShortName,
+      institutionLogoUrl: education.btech.institutionLogoUrl,
+      institutionWebsiteLink: education.btech.institutionWebsiteLink,
+      qualification: education.btech.qualification,
+      result: education.btech.result,
     },
     {
-      institutionName: DIPLOMA_INSTITUTION_NAME,
-      institutionLogoUrl: DIPLOMA_INSITUTUTION_LOGO,
-      institutionShortName: DIPLOMA_INSTITUTION_SHORTNAME,
-      institutionWebsiteLink: DIPLOMA_INSTITUTION_WEBSITE_URL,
-      qualification: DIPLOMA_INSTITUTION_QUALIFICATION,
-      result: DIPLOMA_INSTITUTION_RESULT,
+      institutionName: education.diploma.institutionName,
+      institutionLogoUrl: education.diploma.institutionLogoUrl,
+      institutionShortName: education.diploma.institutionShortName,
+      institutionWebsiteLink: education.diploma.institutionWebsiteLink,
+      qualification: education.diploma.qualification,
+      result: education.diploma.result,
     },
     {
-      institutionName: SCHOOL_INSTITUTION_NAME,
-      institutionShortName: SCHOOL_INSTITUTION_SHORTNAME,
-      institutionLogoUrl: SCHOOL_INSITUTUTION_LOGO,
-      institutionWebsiteLink: SCHOOL_INSTITUTION_WEBSITE_URL,
-      qualification: SCHOOL_INSTITUTION_QUALIFICATION,
-      result: SCHOOL_INSTITUTION_RESULT,
+      institutionName: education.school.institutionName,
+      institutionShortName: education.school.institutionShortName,
+      institutionLogoUrl: education.school.institutionLogoUrl,
+      institutionWebsiteLink: education.school.institutionWebsiteLink,
+      qualification: education.school.qualification,
+      result: education.school.result,
     },
   ];
 }
 
 export const getCodingStatsData = () => {
   return {
-    codingStatsUrl: CODOLIO_URL,
+    codingStatsUrl: config.coding.codolioUrl,
   };
 };
 
 
 export const getContactData = () => {
-  return  {
-    phoneno: CONTACT_PHONE_NUMBER,
-    email: CONTACT_EMAIL_ID,
-    linkedin: CONTACT_LINKEDIN_URL,
-    address: CONTACT_ADDRESS,
-    websiteurl: CONTACT_WEBSITE_URL,
-    mapUrl: CONTACT_MAP_URL,
+  return {
+    phoneno: config.contact.phoneNumber,
+    email: config.contact.emailId,
+    linkedin: config.contact.linkedinUrl,
+    address: config.contact.address,
+    websiteurl: config.contact.websiteUrl,
+    mapUrl: config.contact.mapUrl,
   };
 };
 
+export const getAboutMeData = () => {
+  return {
+    name: config.profile.name,
+    title: config.profile.title,
+    description: config.profile.description,
+    address: config.contact.address,
+    resumeUrl: config.profile.resumeUrl,
+    email: config.contact.emailId,
+    github: config.profile.github,
+    linkedin: config.contact.linkedinUrl,
+    twitter: config.profile.twitter,
+    tags: config.profile.tags,
+    graduation: config.profile.graduation,
+    education: config.profile.education,
+  };
+};

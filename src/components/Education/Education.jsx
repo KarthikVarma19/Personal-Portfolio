@@ -51,7 +51,7 @@ const QualificationItem = ({
     qualification,
     result,
   }) => {
-    return (
+  return(
       <div style={{ overflow: "hidden" }}>
         <Button
           variant=""
@@ -73,10 +73,10 @@ const QualificationItem = ({
                 alt={institutionShortName}
                 style={{
                   cursor: "pointer",
-                  width: "50px",
-                  height: "50px",
+                  width: "60px",
+                  height: "60px",
                   borderRadius: "10px",
-                  objectFit: "fill",
+                  objectFit: "fill"
                 }}
               />
               <TimelineConnector />
@@ -85,7 +85,6 @@ const QualificationItem = ({
               style={{
                 borderRadius: "8px",
                 padding: "10px",
-                boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
               }}
             >
               <TimelineContent sx={{ py: "0px", px: 2 }}>
@@ -95,16 +94,20 @@ const QualificationItem = ({
                   fontFamily="Poppins, sans-serif"
                   className={styles.instituteName}
                   style={{
-                    fontWeight: "bold",
+                    fontSize: "1rem",
+                    fontWeight: "600",
                     marginBottom: "5px",
                   }}
                 >
                   {institutionName}
                 </Typography>
                 <Typography
-                  fontSize="13px"
                   fontFamily="Poppins, sans-serif"
-                  style={{ marginBottom: "3px" }}
+                  style={{
+                    marginBottom: "3px",
+                    opacity: 0.75,
+                    fontSize: "0.8rem",
+                  }}
                 >
                   {qualification}
                 </Typography>
