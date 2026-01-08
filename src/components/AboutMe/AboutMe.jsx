@@ -13,7 +13,7 @@ export default function AboutMe() {
     <>
       <div className={`row align-items-center ${styles.cardOuterContainer} m-3 page-enter overflow-y-auto-scrollbar`}>
         {/* Profile Image */}
-        <div className="col-md-4 text-center mb-md-0">
+        <div className="col-md-4 text-center mb-md-0 p-3">
           <img src="/karthik-varma-profile-pic.jpeg"
             alt="Karthik Varma" className="rounded-circle img-fluid"
             style={{ width: "200px", height: "200px", objectFit: "cover" }}

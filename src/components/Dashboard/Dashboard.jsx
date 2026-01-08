@@ -12,7 +12,7 @@ import {
   DashboardLayout,
   DashboardSidebarPageItem,
 } from "@toolpad/core/DashboardLayout";
-import { useDemoRouter } from "@toolpad/core/internal";
+import { useLocation, useNavigate } from "react-router-dom";
 import Portfolio from "../Portfolio/Portfolio";
 
 import styles from "./Dashboard.module.css";
@@ -150,29 +150,36 @@ const demoTheme = createTheme({
 });
 
 function DemoPageContent({ pathname }) {
-  switch (pathname) {
-    case "/portfolio":
-      
+  // Normalize pathname - remove leading slash and handle root
+  const normalizedPath = pathname === "/" ? "/" : pathname.replace(/^\/+/, "");
+  
+  const defaultContent = (
+    <>
+      <AboutMe />
+      <TawkMessengerReact
+        propertyId="6853d3d94420ce190d172093"
+        widgetId="1iu3n735u"
+      />
+    </>
+  );
+  
+  switch (normalizedPath) {
+    case "/":
+      return defaultContent;
+    case "portfolio":
       return <Portfolio />;
-    case "/aboutme":
+    case "aboutme":
       return <AboutMe />;
-    case "/codingstats":
+    case "codingstats":
       return <CodingStats />;
-    case "/resume":
+    case "resume":
       return <Resume />;
-    case "/contact":
+    case "contact":
       return <Contact />;
-    case "/projects":
+    case "projects":
       return <Projects />;
     default:
-      return (
-        <>
-          <AboutMe />
-        <TawkMessengerReact
-          propertyId="6853d3d94420ce190d172093"
-          widgetId="1iu3n735u"/>
-        </>
-      );
+      return defaultContent;
   }
 }
 
@@ -181,7 +188,44 @@ DemoPageContent.propTypes = {
 };
 
 function DashboardLayoutCustomPageItems() {
-  const router = useDemoRouter("/");
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  // Create a router adapter that matches Toolpad's expected interface
+  const router = React.useMemo(() => {
+    // Get the current pathname and normalize it
+    let currentPath = location.pathname;
+    // Remove leading slash for segment matching, but keep "/" for root
+    const segment = currentPath === "/" ? "/" : currentPath.replace(/^\/+/, "");
+    
+    return {
+      pathname: segment,
+      searchParams: new URLSearchParams(location.search),
+      navigate: (path, options) => {
+        // Handle both absolute and relative paths
+        let targetPath = path;
+        if (!targetPath.startsWith("/")) {
+          targetPath = `/${targetPath}`;
+        }
+        // Handle replace option if provided
+        if (options?.replace) {
+          navigate(targetPath, { replace: true });
+        } else {
+          navigate(targetPath);
+        }
+      },
+      // Add other methods that Toolpad might expect
+      go: (delta) => {
+        navigate(delta);
+      },
+      back: () => {
+        navigate(-1);
+      },
+      forward: () => {
+        navigate(1);
+      },
+    };
+  }, [location, navigate]);
 
   // preview-start
   const renderPageItem = React.useCallback((item, { mini }) => {
@@ -209,8 +253,24 @@ function DashboardLayoutCustomPageItems() {
       return <CustomPageItem item={item} mini={mini} />;
     }
 
+    // Handle navigation items - use React Router navigation
+    // Toolpad will use the router's navigate method automatically based on segment
+    // But we can also provide onClick as a fallback
+    if (item.segment) {
+      const handleNavigation = () => {
+        const targetPath = item.segment === "aboutme" ? "/" : `/${item.segment}`;
+        navigate(targetPath);
+      };
+      return (
+        <DashboardSidebarPageItem
+          item={item}
+          onClick={handleNavigation}
+        />
+      );
+    }
+
     return <DashboardSidebarPageItem item={item} />;
-  }, []);
+  }, [navigate]);
   // preview-end
 
   return (

@@ -1,0 +1,31 @@
+# robots.txt for karthik.rocks
+# Best practices for SEO and web crawlers
+
+# Allow all search engines to crawl the entire site
+User-agent: *
+Allow: /
+
+# Disallow crawling of common non-content paths (if they exist)
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /.vscode/
+
+# Crawl delay (optional - helps prevent server overload)
+# Crawl-delay: 1
+
+# Specific rules for major search engines (optional)
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.karthik.rocks/sitemap.xml
+
