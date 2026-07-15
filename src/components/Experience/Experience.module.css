@@ -1,0 +1,85 @@
+.experience {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 6px 4px;
+  font-family: "Poppins", sans-serif;
+}
+
+.item {
+  position: relative;
+  padding-left: 20px;
+  border-left: 2px solid rgba(33, 150, 243, 0.35);
+}
+
+.item::before {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #2196f3;
+  box-shadow: 0 0 0 4px rgba(33, 150, 243, 0.15);
+}
+
+.headerRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4px;
+}
+
+.role {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.duration {
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: rgba(33, 150, 243, 0.12);
+  color: #2196f3;
+  white-space: nowrap;
+}
+
+.company {
+  font-size: 0.85rem;
+  font-weight: 500;
+  opacity: 0.85;
+  margin: 2px 0 8px;
+}
+
+.company .location {
+  opacity: 0.6;
+  font-weight: 400;
+}
+
+.highlights {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.highlights li {
+  position: relative;
+  padding-left: 16px;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  opacity: 0.9;
+}
+
+.highlights li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: #2196f3;
+}

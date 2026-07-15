@@ -1,54 +1,35 @@
 import { config } from "./config";
 
 const projects = {
-  onlinefraud: {
-    name: "Onlinefraud.in - Scam & Grievance Reporting",
-    liveLink: "https://sax-violin-74798706.figma.site/",
-    githubRepoLink: "https://github.com/KarthikVarma19/",
-    projectIntro: "Built an anonymous scam and fraud reporting platform with proof-based submissions, community voting, risk scoring, and admin/authority verification to track and resolve trending scams.",
-    techStack: ["React.js", "Node.js + Express", "PostgreSQL", "Redis", "Neo4j"],
-  },
-  learnSphere: {
-    name: "LearnSphere – A Collaborative Learning Platform",
-    liveLink: "https://serif-office-14923277.figma.site/",
-    githubRepoLink: "https://github.com/KarthikVarma19/",
-    projectIntro: "Built a collaborative learning platform with room-based organization, topic-level discussions, resource sharing, and AI-powered insights for students, educators, and professionals.",
-    techStack: ["React.js", "Redux", "Go", "PostgreSQL", "Redis", "Supabase", "Shadcn UI"],
-  },
-  vahanPranam: {
-    name: "Vahan Pranam – A Vehicle Management Portal",
-    liveLink: "https://sticky-coyote-22357316.figma.site/",
-    githubRepoLink: "https://github.com/KarthikVarma19/",
-    projectIntro: "Built a unified vehicle management platform to track fuel, maintenance, and documents, generate reports, and deliver timely alerts for individuals and fleet managers.",
-    techStack: ["React.js", "Node.js + Express", "MongoDB", "Redis", "Shadcn UI"],
-  },
-  gadgetVault: {
-    name: "GadgetVault – Invoice & Warranty Tracker",
-    liveLink: "https://gear-native-28333139.figma.site/",
-    githubRepoLink: "https://github.com/KarthikVarma19/",
-    projectIntro: "Built a SaaS platform for managing gadget invoices and warranties with smart tracking, reminders, and analytics.",
-    techStack: ["React.js", "Node.js + Express", "MongoDB", "Redis", "Shadcn UI"],
-  },
   trimrr: {
-    name: "TRIMRR - URL SHORTENER",
+    name: "TRIMRR - URL Shortener",
     liveLink: "https://trimrr-urls.vercel.app/",
     githubRepoLink: "https://github.com/KarthikVarma19/Trimrr",
-    projectIntro: "Built a full-stack URL Shortener app using ReactJS, Tailwind CSS, Supabase, and Shadcn UI, supporting user authentication, analytics, and QR code generation.",
-    techStack: ["ReactJS", "Tailwind CSS", "Supabase", "Shadcn UI"],
+    projectIntro: "Full-stack URL shortener with QR generation, click analytics, and low-latency redirection. Built RESTful APIs and indexed PostgreSQL schemas on Supabase, with secure authentication and role-based access control (RBAC).",
+    techStack: ["React.js", "Tailwind CSS", "Supabase", "PostgreSQL", "Shadcn UI"],
   },
-  insiderJobs: {
-    name: "INSIDER JOBS - JOB PORTAL",
-    liveLink: "https://insiderjob-portal.vercel.app/",
-    githubRepoLink: "https://github.com/KarthikVarma19/Job-Portal",
-    projectIntro: "Developed a responsive job portal frontend featuring job search, filtering, pagination, and recruiter UI using React.js and Tailwind CSS.",
-    techStack: ["ReactJS", "Tailwind CSS", "Clerk Auth UI"],
+  aiCommerce: {
+    name: "AI Commerce & Support Platform",
+    liveLink: "https://github.com/KarthikVarma19",
+    githubRepoLink: "https://github.com/KarthikVarma19",
+    projectIntro: "Agentic AI platform integrating shopping assistance and telecom customer support using LangChain, LangGraph, and RAG. Built AI agents with tool calling for product search, image-based recommendations, and order processing, with FAQs and PDFs indexed in ChromaDB. Integrated Qwen, Llama Vision, and Groq for multimodal, context-aware responses.",
+    techStack: ["Python", "LangChain", "LangGraph", "ChromaDB", "RAG", "Streamlit"],
   },
-  portfolio: {
-    name: "PERSONAL PORTFOLIO",
-    liveLink: "https://helloimkarthik.vercel.app/",
-    githubRepoLink: "https://github.com/KarthikVarma19/Personal-Portfolio",
-    projectIntro: "Implemented a fully responsive and mobile-friendly UI, ensuring seamless user experience across all devices.",
-    techStack: ["ReactJS", "Bootstrap", "MUI UI Library"],
+};
+
+const experience = {
+  inncircles: {
+    role: "Software Developer Intern",
+    company: "Inncircles Technologies",
+    location: "Hyderabad, India",
+    duration: "Jul 2025 - Present",
+    highlights: [
+      "Built scalable backend services using Node.js and Express.js for construction planning workflows — dependency tracking, scheduling, versioning, and hierarchical project structures.",
+      "Optimized queries, indexing strategies, and critical REST APIs for 4M+ records, reducing response times by 55%.",
+      "Designed a configurable validation framework to execute dynamic business rules across modules, reducing workflow failures by 65%.",
+      "Built reusable master data management components and sync workflows for consistent data propagation across global templates.",
+      "Raised reliability with automated testing (85% coverage), SonarQube quality gates, and production analytics monitoring.",
+    ],
   },
 };
 
@@ -59,7 +40,7 @@ const education = {
     institutionLogoUrl: "https://res.cloudinary.com/karthikvarma/image/upload/v1750181761/Peronal/antislogo.jpg",
     institutionWebsiteLink: "https://www.anits.org",
     qualification: "B.Tech - Information Technology",
-    result: "Sep 2023 - May 2026 | CGPA : 9.2",
+    result: "Sep 2023 - Apr 2026 | CGPA : 9.15",
   },
   diploma: {
     institutionName: "Government Polytechnic, Visakhapatnam",
@@ -100,34 +81,6 @@ export const getResumeData = () => {
 export const getProjectsData = () => {
   return [
     {
-      projectName: projects.onlinefraud.name,
-      liveLink: projects.onlinefraud.liveLink,
-      GitHubRepoLink: projects.onlinefraud.githubRepoLink,
-      projectIntro: projects.onlinefraud.projectIntro,
-      TechStack: projects.onlinefraud.techStack,
-    },
-    {
-      projectName: projects.learnSphere.name,
-      liveLink: projects.learnSphere.liveLink,
-      GitHubRepoLink: projects.learnSphere.githubRepoLink,
-      projectIntro: projects.learnSphere.projectIntro,
-      TechStack: projects.learnSphere.techStack,
-    },
-    {
-      projectName: projects.vahanPranam.name,
-      liveLink: projects.vahanPranam.liveLink,
-      GitHubRepoLink: projects.vahanPranam.githubRepoLink,
-      projectIntro: projects.vahanPranam.projectIntro,
-      TechStack: projects.vahanPranam.techStack,
-    },
-    {
-      projectName: projects.gadgetVault.name,
-      liveLink: projects.gadgetVault.liveLink,
-      GitHubRepoLink: projects.gadgetVault.githubRepoLink,
-      projectIntro: projects.gadgetVault.projectIntro,
-      TechStack: projects.gadgetVault.techStack,
-    },
-    {
       projectName: projects.trimrr.name,
       liveLink: projects.trimrr.liveLink,
       GitHubRepoLink: projects.trimrr.githubRepoLink,
@@ -135,22 +88,27 @@ export const getProjectsData = () => {
       TechStack: projects.trimrr.techStack,
     },
     {
-      projectName: projects.insiderJobs.name,
-      liveLink: projects.insiderJobs.liveLink,
-      GitHubRepoLink: projects.insiderJobs.githubRepoLink,
-      projectIntro: projects.insiderJobs.projectIntro,
-      TechStack: projects.insiderJobs.techStack,
-    },
-    {
-      projectName: projects.portfolio.name,
-      liveLink: projects.portfolio.liveLink,
-      GitHubRepoLink: projects.portfolio.githubRepoLink,
-      projectIntro: projects.portfolio.projectIntro,
-      TechStack: projects.portfolio.techStack,
+      projectName: projects.aiCommerce.name,
+      liveLink: projects.aiCommerce.liveLink,
+      GitHubRepoLink: projects.aiCommerce.githubRepoLink,
+      projectIntro: projects.aiCommerce.projectIntro,
+      TechStack: projects.aiCommerce.techStack,
     },
   ];
 };
 
+
+export const getExperienceData = () => {
+  return [
+    {
+      role: experience.inncircles.role,
+      company: experience.inncircles.company,
+      location: experience.inncircles.location,
+      duration: experience.inncircles.duration,
+      highlights: experience.inncircles.highlights,
+    },
+  ];
+};
 
 export const getMyEducationData = () => {
   return [

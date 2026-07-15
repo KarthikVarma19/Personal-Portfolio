@@ -1,9 +1,13 @@
-import { FaJs, FaHtml5, FaCss3Alt, FaReact, FaGitAlt, FaGithub, FaDocker, FaNodeJs, FaJava } from "react-icons/fa";
+import {
+  FaJs, FaReact, FaGitAlt, FaGithub, FaDocker, FaNodeJs,
+  FaJava, FaPython, FaAngular, FaAws, FaLinux,
+} from "react-icons/fa";
 import { BiLogoTypescript, BiLogoPostgresql } from "react-icons/bi";
-import { DiMongodb, DiSqllite } from "react-icons/di";
-import { SiMysql, SiPostman, SiExpress } from "react-icons/si";
-import { IoLogoFirebase } from "react-icons/io5";
-import { VscVscode } from "react-icons/vsc";
+import { DiMongodb } from "react-icons/di";
+import {
+  SiPostman, SiExpress, SiTailwindcss, SiRedis,
+  SiSpringboot, SiJest, SiSonarqube,
+} from "react-icons/si";
 import { BsThreeDots } from "react-icons/bs";
 import styles from "./Skills.module.css";
 
@@ -34,7 +38,6 @@ const Skills = () => {
     return (
       <>
         <div className={styles.treenode}>{skillName}</div>
-        {/* <div className={styles.treenode}>{Icon && <Icon size="20px" />}</div> */}
         <div className={styles.treenodepointer}>
           {/* Left Slant */}
           <div className={styles.leftSlant}></div>
@@ -43,11 +46,6 @@ const Skills = () => {
         </div>
       </>
     );
-  };
-  const LinkedListDataStructure = () => {};
-
-  const ArrayDataStructure = () => {
-    return <></>;
   };
 
   const ArrayBlock = ({ Icon, skillName }) => {
@@ -77,22 +75,19 @@ const Skills = () => {
 
   return (
     <>
-      {/* <div className={styles.showTextIconToggleButtonContainer}>
-        <FormGroup>
-          <FormControlLabel
-            control={
-              <Switch
-                size="small"
-                checked={showIcons}
-                onChange={(e) => setShowIcons(e.target.checked)}
-              />
-            }
-            label="Names"
-          />
-        </FormGroup>
-      </div> */}
       <div className="skills-section p-2">
         <div className="skills-categories">
+          <div className={styles.skillsCategory}>
+            <h6>Languages</h6>
+            <div className={styles.skillsCategoryTreeStructureContainer}>
+              <ul>
+                <ArrayBlock Icon={FaJava} skillName={"Java"} />
+                <ArrayBlock Icon={FaPython} skillName={"Python"} />
+                <ArrayBlock Icon={FaJs} skillName={"JavaScript"} />
+                <ArrayBlock Icon={BiLogoTypescript} skillName={"TypeScript"} />
+              </ul>
+            </div>
+          </div>
           <div className={styles.skillsCategory}>
             <h6>Frontend</h6>
             <div className={styles.skillsCategoryTreeStructureContainer}>
@@ -102,22 +97,14 @@ const Skills = () => {
                 </div>
                 <div className={styles.treenodelevelone}>
                   <div className={styles.treenodelevelonenodeone}>
-                    <TreeNode Icon={FaJs} size="20px" skillName={"JS"} />
+                    <TreeNode Icon={FaAngular} size="20px" skillName={"Angular"} />
                   </div>
                   <div className={styles.treenodelevelonenodetwo}>
                     <TreeNode
-                      Icon={BiLogoTypescript}
+                      Icon={SiTailwindcss}
                       size="20px"
-                      skillName={"TS"}
+                      skillName={"Tailwind"}
                     />
-                  </div>
-                </div>
-                <div className={styles.treenodeleveltwo}>
-                  <div className={styles.treenodeleveltwonodeone}>
-                    <TreeNode Icon={FaHtml5} size="20px" skillName={"HTML"} />
-                  </div>
-                  <div className={styles.treenodeleveltwonodetwo}>
-                    <TreeNode Icon={FaCss3Alt} size="20px" skillName={"CSS"} />
                   </div>
                 </div>
               </ul>
@@ -127,12 +114,11 @@ const Skills = () => {
             <h6>Backend</h6>
             <div className={styles.skillsCategoryTreeStructureContainer}>
               <ul>
-                <LinkedListNode Icon={FaJava} skillName={"Java"} />
-                <LinkedListPointer />
-
-                <LinkedListNode Icon={FaNodeJs} skillName={"NodeJs"} />
+                <LinkedListNode Icon={FaNodeJs} skillName={"Node.js"} />
                 <LinkedListPointer />
                 <LinkedListNode Icon={SiExpress} skillName={"Express"} />
+                <LinkedListPointer />
+                <LinkedListNode Icon={SiSpringboot} skillName={"Spring Boot"} />
                 <LinkedListPointer />
               </ul>
             </div>
@@ -141,22 +127,35 @@ const Skills = () => {
             <h6>Databases</h6>
             <div className={styles.skillsCategoryTreeStructureContainer}>
               <ul>
-                <ArrayBlock Icon={SiMysql} skillName={"MySQL"} />
                 <ArrayBlock Icon={BiLogoPostgresql} skillName={"PostgreSQL"} />
-                <ArrayBlock Icon={DiSqllite} skillName={"SQLite"} />
-                <ArrayBlock Icon={DiMongodb} skillName={"Mongodb"} />
-                <ArrayBlock Icon={BsThreeDots} skillName={""} />
-                <ArrayBlock Icon={IoLogoFirebase} skillName={"Firebase"} />
+                <ArrayBlock Icon={DiMongodb} skillName={"MongoDB"} />
+                <ArrayBlock Icon={SiRedis} skillName={"Redis"} />
               </ul>
             </div>
           </div>
           <div className={styles.skillsCategory}>
-            <h6>Other Tools</h6>
+            <h6>AI / GenAI</h6>
+            <div className={styles.skillsCategoryTreeStructureContainer}>
+              <ul>
+                <ArrayBlock skillName={"LangChain"} />
+                <ArrayBlock skillName={"LangGraph"} />
+                <ArrayBlock skillName={"ChromaDB"} />
+                <ArrayBlock skillName={"RAG"} />
+                <ArrayBlock skillName={"Groq"} />
+                <ArrayBlock Icon={BsThreeDots} skillName={""} />
+              </ul>
+            </div>
+          </div>
+          <div className={styles.skillsCategory}>
+            <h6>Cloud & Tools</h6>
             <div className={styles.skillsCategoryTreeStructureContainer}>
               <SetDataStructure>
                 <div className={styles.setDataStructureContainer}>
                   <div className={styles.setItem}>
-                    <VscVscode size="20px" />
+                    <FaAws size="20px" />
+                  </div>
+                  <div className={styles.setItem}>
+                    <FaDocker size="20px" />
                   </div>
                   <div className={styles.setItem}>
                     <FaGitAlt size="20px" />
@@ -165,7 +164,13 @@ const Skills = () => {
                     <FaGithub size="20px" />
                   </div>
                   <div className={styles.setItem}>
-                    <FaDocker size="20px" />
+                    <FaLinux size="20px" />
+                  </div>
+                  <div className={styles.setItem}>
+                    <SiJest size="20px" />
+                  </div>
+                  <div className={styles.setItem}>
+                    <SiSonarqube size="20px" />
                   </div>
                   <div className={styles.setItem}>
                     <SiPostman size="20px" />
